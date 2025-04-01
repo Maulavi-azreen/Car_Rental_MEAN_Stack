@@ -1,0 +1,135 @@
+<section class="relative bg-white min-h-[80vh] flex items-center pt-16">
+  <div class="container mx-auto flex flex-col md:flex-row items-center">
+    <!-- Left: Text and Search Bar -->
+    <div class="md:w-1/2 text-center md:text-left p-6 z-10">
+      <!-- Headline -->
+      <h1 class="text-5xl md:text-6xl font-extrabold text-blue-900 mb-4 flex items-center">
+        Unlock Your Travel Experience
+        <span class="ml-2 text-orange-500">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2a8 8 0 00-8 8c0 5.4 7 12.66 7.34 13a1 1 0 001.32 0C13 22.66 20 15.4 20 10a8 8 0 00-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z" />
+          </svg>
+        </span>
+      </h1>
+      <!-- Subtext -->
+      <p class="text-lg text-gray-600 mb-8">
+        Lorem ipsum dolor sit amet consectetur. Sagittis augue odio enim lorem tellus. Eu vehicula in id ullamcorper. Lectus integer in malesuada adipiscing lobortis. Ac laoreet mauris suspendisse integer vestibulum porta.
+      </p>
+      <!-- Booking Now Button -->
+      <button class="bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 mb-8">
+        Booking Now
+      </button>
+      <!-- Search Bar with Tabs -->
+      <div class="bg-white p-6 rounded-xl shadow-xl w-full">
+        <!-- Tabs -->
+        <div class="flex border-b mb-6">
+          <button
+            (click)="setActiveTab('hourly')"
+            [ngClass]="{'border-b-4 border-blue-900 text-blue-900': activeTab === 'hourly', 'text-gray-600': activeTab !== 'hourly'}"
+            class="px-6 py-3 font-semibold text-lg"
+          >
+            Hourly
+          </button>
+          <button
+            (click)="setActiveTab('distance')"
+            [ngClass]="{'border-b-4 border-blue-900 text-blue-900': activeTab === 'distance', 'text-gray-600': activeTab !== 'distance'}"
+            class="px-6 py-3 font-semibold text-lg"
+          >
+            Distance
+          </button>
+          <button
+            (click)="setActiveTab('flat')"
+            [ngClass]="{'border-b-4 border-blue-900 text-blue-900': activeTab === 'flat', 'text-gray-600': activeTab !== 'flat'}"
+            class="px-6 py-3 font-semibold text-lg"
+          >
+            Flat Rate
+          </button>
+        </div>
+        <!-- Search Inputs -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="relative">
+            <label class="block text-gray-600 mb-2 font-medium">Pick Up Address</label>
+            <div class="flex items-center">
+              <span class="absolute left-3 text-blue-900">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2a8 8 0 00-8 8c0 5.4 7 12.66 7.34 13a1 1 0 001.32 0C13 22.66 20 15.4 20 10a8 8 0 00-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z" />
+                </svg>
+              </span>
+              <select class="w-full pl-10 p-3 border rounded-lg text-gray-600 custom-select">
+                <option>Enter pick up address</option>
+                <option>City A</option>
+                <option>City B</option>
+              </select>
+            </div>
+          </div>
+          <div class="relative">
+            <label class="block text-gray-600 mb-2 font-medium">Drop Off Address</label>
+            <div class="flex items-center">
+              <span class="absolute left-3 text-blue-900">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2a8 8 0 00-8 8c0 5.4 7 12.66 7.34 13a1 1 0 001.32 0C13 22.66 20 15.4 20 10a8 8 0 00-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z" />
+                </svg>
+              </span>
+              <select class="w-full pl-10 p-3 border rounded-lg text-gray-600 custom-select">
+                <option>Enter drop off address</option>
+                <option>City A</option>
+                <option>City B</option>
+              </select>
+            </div>
+          </div>
+          <div class="relative">
+            <label class="block text-gray-600 mb-2 font-medium">Pick Up Date</label>
+            <div class="flex items-center">
+              <span class="absolute left-3 text-blue-900">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M6.5 2h11a2 2 0 012 2v16a2 2 0 01-2 2h-11a2 2 0 01-2-2V4a2 2 0 012-2zm0 2v2h11V4h-11zm0 4h11v12h-11V8z" />
+                </svg>
+              </span>
+              <input type="date" class="w-full pl-10 p-3 border rounded-lg text-gray-600 custom-input" />
+            </div>
+          </div>
+          <div class="relative">
+            <label class="block text-gray-600 mb-2 font-medium">Pick Up Time</label>
+            <div class="flex items-center">
+              <span class="absolute left-3 text-blue-900">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 2a8 8 0 110 16 8 8 0 010-16zm0 2v6l4 2-1 1.74-4.5-2.6V6h1z" />
+                </svg>
+              </span>
+              <input type="time" class="w-full pl-10 p-3 border rounded-lg text-gray-600 custom-input" />
+            </div>
+          </div>
+        </div>
+        <!-- Search Button -->
+        <div class="mt-6 flex justify-end">
+          <button class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 shadow-md">
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Right: Car Image with Background Elements -->
+    <div class="md:w-1/2 relative">
+      <!-- Background Elements (Map and Avatars) -->
+      <div class="absolute inset-0 opacity-20">
+        <img src="https://www.transparenttextures.com/patterns/asfalt-dark.png" alt="Map texture" class="w-full h-full object-cover" />
+      </div>
+      <!-- Avatars -->
+      <div class="absolute top-10 left-10 w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center">
+        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User" class="w-full h-full rounded-full" />
+      </div>
+      <div class="absolute top-20 right-20 w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User" class="w-full h-full rounded-full" />
+      </div>
+      <div class="absolute bottom-20 left-20 w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center">
+        <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="User" class="w-full h-full rounded-full" />
+      </div>
+      <!-- Car Image -->
+      <img
+        src="assets/Blue_SUV-removebg.png"
+        alt="White SUV"
+        class="w-full h-auto object-contain relative z-10 drop-shadow-lg"
+      />
+    </div>
+  </div>
+</section>

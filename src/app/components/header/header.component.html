@@ -1,0 +1,37 @@
+<nav class="bg-blue-900 text-white p-4 sticky top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <div class="text-2xl font-bold">
+        <a href="/">CarRental</a>
+      </div>
+      <!-- Navigation Links -->
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="#" class="hover:text-orange-500">Home</a></li>
+        <li><a href="#" class="hover:text-orange-500">Cars</a></li>
+        <li><a href="#" class="hover:text-orange-500">Pricing</a></li>
+        <li><a href="#" class="hover:text-orange-500">Contact</a></li>
+      </ul>
+      <!-- CTA Button -->
+      <button class="bg-orange-500 px-4 py-2 rounded-lg hover:bg-orange-600 md:block hidden">
+        Rent Now
+      </button>
+      <!-- Mobile Menu Toggle (Hamburger) -->
+      <div class="md:hidden">
+        <button (click)="toggleMenu()" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu (Shown when toggled) -->
+    <div *ngIf="isMenuOpen" class="md:hidden bg-blue-900 p-4">
+      <ul class="space-y-4">
+        <li><a href="#" class="hover:text-orange-500">Home</a></li>
+        <li><a href="#" class="hover:text-orange-500">Cars</a></li>
+        <li><a href="#" class="hover:text-orange-500">Pricing</a></li>
+        <li><a href="#" class="hover:text-orange-500">Contact</a></li>
+        <li><button class="bg-orange-500 px-4 py-2 rounded-lg hover:bg-orange-600 w-full">Rent Now</button></li>
+      </ul>
+    </div>
+  </nav>
