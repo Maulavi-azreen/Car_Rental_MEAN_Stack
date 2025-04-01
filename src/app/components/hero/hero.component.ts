@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './hero.component.css'
 })
 export class HeroComponent {
-  activeTab: string = 'rent'; // Default tab
+  activeTab: string = 'hourly'; // Default tab
 
   setActiveTab(tab: string) {
     this.activeTab = tab;

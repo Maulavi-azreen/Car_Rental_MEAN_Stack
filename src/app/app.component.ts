@@ -7,12 +7,14 @@ import { CarShowcaseComponent } from './components/car-showcase/car-showcase.com
 import { CtaComponent } from './components/cta/cta.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { ProcedureSectionComponent } from './components/procedure-section/procedure-section.component';
+
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,HeaderComponent,FooterComponent,HeroComponent,CarShowcaseComponent,CtaComponent,FeaturesComponent,TestimonialsComponent],
+  imports: [RouterOutlet,HeaderComponent,FooterComponent,HeroComponent,ProcedureSectionComponent,CarShowcaseComponent,CtaComponent,FeaturesComponent,TestimonialsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

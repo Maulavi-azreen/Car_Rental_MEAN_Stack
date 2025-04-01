@@ -1,0 +1,62 @@
+/* Style for the section */
+section {
+    background-color: white;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  /* Title style */
+  h2 {
+    color: #1e3a8a; /* Blue */
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  
+  /* Description style */
+  p {
+    color: #4b5563; /* Gray */
+    font-size: 1.25rem;
+  }
+  
+  /* Step container */
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  /* Step box */
+  .flex-col {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Circle icon background */
+  .bg-blue-900, .bg-orange-500 {
+    background-color: #1e3a8a; /* Blue */
+    background-color: #f97316; /* Orange */
+    border-radius: 50%;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Font Awesome icon styling */
+  .fas {
+    font-size: 2rem;
+  }
+  
+  /* Text inside each step */
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e3a8a; /* Blue */
+  }
+  
+  p {
+    text-align: center;
+    color: #4b5563; /* Gray */
+    font-size: 1rem;
+  }
+  
