@@ -1,88 +1,61 @@
-<section class="relative min-h-[80vh] flex items-center pt-28"> <!-- Increased padding-top (pt-28) -->
-  <!-- Background Video -->
+<section class="min-h-[90vh] flex items-center pt-10">
+  <!-- Background Image -->
   <div class="absolute inset-0 z-0">
-    <video autoplay loop muted class="w-full h-full object-cover">
-      <source src="assets/hero.mp4" type="video/mp4">
-    </video>
+    <img src="assets/Hero_image.jpg" alt="Hero Image" class="w-full h-full object-cover object-right">
   </div>
-
   <!-- Overlay for darkening the background -->
   <div class="absolute inset-0 bg-black opacity-60"></div>
-  
-  <div class="container mx-auto flex flex-col md:flex-row items-center relative z-10">
+  <!-- Content wrapper -->
+  <div class="container mx-auto flex flex-col md:flex-row items-center relative z-10 pb-24 px-4">
     <!-- Left: Text Content -->
-    <div class="md:w-1/2 text-center md:text-left p-6">
-      <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4">
-        Unlock Your Travel Experience
+    <div class="w-full md:w-1/2 text-center md:text-left p-6">
+      <p class="text-orange-500 text-lg md:text-xl uppercase tracking-wider">
+        Plan Your Trip Now
+      </p>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+        Save big with our car rental
       </h1>
       <p class="text-lg text-white mb-8">
-        Lorem ipsum dolor sit amet consectetur. Sagittis augue odio enim lorem tellus. Eu vehicula in id ullamcorper. Lectus integer in malesuada adipiscing lobortis. Ac laoreet mauris suspendisse integer vestibulum porta.
+        To contribute to positive change and achieve our sustainability goals with many extraordinary
       </p>
+      <button class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 shadow-md flex items-center space-x-2 mx-auto md:mx-0 transition-transform transform hover:scale-105">
+        <span>Book Ride</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
     </div>
-
-    <!-- Right: Search Card -->
-    <div class="md:w-1/2 p-6">
-      <div class="bg-white p-6 rounded-xl shadow-xl border border-gray-200">
-        <!-- Tabs -->
-        <div class="flex border-b mb-6">
-          <button
-            (click)="setActiveTab('hourly')"
-            [ngClass]="{'border-b-4 border-blue-900 text-blue-900': activeTab === 'hourly', 'text-gray-600': activeTab !== 'hourly'}"
-            class="px-4 py-2 font-semibold text-lg"
-          >
-            Hourly
-          </button>
-          <button
-            (click)="setActiveTab('distance')"
-            [ngClass]="{'border-b-4 border-blue-900 text-blue-900': activeTab === 'distance', 'text-gray-600': activeTab !== 'distance'}"
-            class="px-4 py-2 font-semibold text-lg"
-          >
-            Distance
-          </button>
-          <button
-            (click)="setActiveTab('flat')"
-            [ngClass]="{'border-b-4 border-blue-900 text-blue-900': activeTab === 'flat', 'text-gray-600': activeTab !== 'flat'}"
-            class="px-4 py-2 font-semibold text-lg"
-          >
-            Flat Rate
-          </button>
-        </div>
-        
-        <!-- Search Inputs -->
-        <div class="grid grid-cols-2 gap-4">
-          <div class="relative">
-            <label class="block text-gray-600 mb-2 font-medium">Pick Up</label>
-            <select class="w-full p-3 border rounded-lg text-gray-600 custom-select">
-              <option>Enter pick up address</option>
-              <option>City A</option>
-              <option>City B</option>
-            </select>
-          </div>
-          <div class="relative">
-            <label class="block text-gray-600 mb-2 font-medium">Drop</label>
-            <select class="w-full p-3 border rounded-lg text-gray-600 custom-select">
-              <option>Enter drop off address</option>
-              <option>City A</option>
-              <option>City B</option>
-            </select>
-          </div>
-          <div class="relative">
-            <label class="block text-gray-600 mb-2 font-medium">Pick Up Date</label>
-            <input type="date" class="w-full p-3 border rounded-lg text-gray-600 custom-input" />
-          </div>
-          <div class="relative">
-            <label class="block text-gray-600 mb-2 font-medium">Pick Up Time</label>
-            <input type="time" class="w-full p-3 border rounded-lg text-gray-600 custom-input" />
-          </div>
-        </div>
-
-        <!-- Search Button -->
-        <div class="mt-6 flex justify-end">
-          <button class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 shadow-md">
-            Search
-          </button>
+    <!-- Right: Countdown & Stats -->
+    <div class="w-full md:w-1/2 flex flex-col items-center">
+      <!-- Counting Stats -->
+      <div class="mt-6 grid grid-cols-2 gap-6 text-center text-white ">
+        <div *ngFor="let stat of stats">
+          <h2 class="text-3xl font-bold">{{ stat.value | number }}</h2>
+          <p>{{ stat.label }}</p>
         </div>
       </div>
+       <!-- Countdown Timer -->
+       <div class="bg-transparent text-white p-4 rounded-lg shadow-lg text-center w-64 mt-5">
+        <h2 class="text-lg font-semibold mb-2">Limited Offer! Book Now</h2>
+        <div class="text-3xl font-bold text-orange-500">{{ countdown }}</div>
+      </div>
     </div>
+    </div>
+     <!-- Search Bar - Full Width at Bottom -->
+  <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 w-full max-w-5xl bg-white p-5 rounded-lg shadow-lg flex flex-wrap justify-center gap-4 items-center">
+    <input type="date" class="w-48 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500">
+    <input type="text" placeholder="Enter Pick-Up Location" class="w-48 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500">
+    <input type="text" placeholder="Enter Drop-Off Location" class="w-48 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500">
+    <select class="w-48 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500">
+      <option value="">Select Car Model</option>
+      <option value="audi">Audi</option>
+      <option value="bmw">BMW</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="toyota">Toyota</option>
+      <option value="honda">Honda</option>
+    </select>
+    <button class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 shadow-md transition-transform transform hover:scale-105">
+      Search
+    </button>
   </div>
-</section>
+    </section>

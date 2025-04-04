@@ -8,13 +8,14 @@ import { CtaComponent } from './components/cta/cta.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { ProcedureSectionComponent } from './components/procedure-section/procedure-section.component';
+import { CarBrandsMarqueeComponent } from "./components/car-brands-marquee/car-brands-marquee.component";
 
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,HeaderComponent,FooterComponent,HeroComponent,ProcedureSectionComponent,CarShowcaseComponent,CtaComponent,FeaturesComponent,TestimonialsComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, HeroComponent, ProcedureSectionComponent, CarShowcaseComponent, CtaComponent, FeaturesComponent, TestimonialsComponent, CarBrandsMarqueeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

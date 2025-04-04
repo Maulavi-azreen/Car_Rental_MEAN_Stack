@@ -1,0 +1,11 @@
+nav {
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  a, button {
+    color: #ffffff; /* White text */
+  }
+  
+  a:hover {
+    color: #f97316; /* Tailwind's orange-500 */
+  }

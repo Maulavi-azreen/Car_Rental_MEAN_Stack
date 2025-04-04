@@ -1,18 +1,18 @@
-<nav class="bg-blue-900 text-white p-4 sticky top-0 z-20"> <!-- Increased z-index to z-20 -->
+<nav class="bg-transparent text-white p-4 sticky top-0 z-20" [ngClass]="{'bg-blue-900': isScrolled, 'bg-transparent': !isScrolled}">
   <div class="container mx-auto flex justify-between items-center">
     <!-- Logo -->
     <div class="text-2xl font-bold">
-      <a href="/">CarRental</a>
+      <a href="/">Car Rental</a>
     </div>
     <!-- Navigation Links -->
     <ul class="hidden md:flex space-x-6">
-      <li><a href="#" class="hover:text-orange-500">Home</a></li>
-      <li><a href="#" class="hover:text-orange-500">Cars</a></li>
-      <li><a href="#" class="hover:text-orange-500">Pricing</a></li>
-      <li><a href="#" class="hover:text-orange-500">Contact</a></li>
+      <li><a href="#" class="hover:text-orange-500 transition-colors duration-300">Home</a></li>
+      <li><a href="#" class="hover:text-orange-500 transition-colors duration-300">Cars</a></li>
+      <li><a href="#" class="hover:text-orange-500 transition-colors duration-300">Pricing</a></li>
+      <li><a href="#" class="hover:text-orange-500 transition-colors duration-300">Contact</a></li>
     </ul>
     <!-- CTA Button -->
-    <button class="bg-orange-500 px-4 py-2 rounded-lg hover:bg-orange-600 md:block hidden">
+    <button class="bg-orange-500 px-4 py-2 rounded-lg hover:bg-orange-600 md:block hidden transition-transform transform hover:scale-105">
       Rent Now
     </button>
     <!-- Mobile Menu Toggle (Hamburger) -->

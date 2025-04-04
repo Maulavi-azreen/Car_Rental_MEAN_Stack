@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +9,15 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   isMenuOpen = false;
+  isScrolled=false
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    // Add background color when scrolled past 50px
+    this.isScrolled = window.scrollY > 50;
   }
 
 }
