@@ -1,0 +1,70 @@
+{
+  "cars": [
+    {
+      "id": "mercedes_35",
+      "name": "Mercedes 35",
+      "price": 35.40,
+      "model": "Sedan",
+      "doors": 4,
+      "seats": 5,
+      "luggage": "2 Suitcases / 2 Bags",
+      "transmission": "Automatic",
+      "image": "/assets/Mercedes.png"
+    },
+    {
+      "id": "suv",
+      "name": "SUV",
+      "price": 45.00,
+      "model": "Sedan",
+      "doors": 4,
+      "seats": 5,
+      "luggage": "3 Suitcases / 2 Bags",
+      "transmission": "Automatic",
+      "image": "/assets/SUV.png"
+    },
+    {
+      "id": "vw_passatcc",
+      "name": "VW PassatCC",
+      "price": 30.00,
+      "model": "Sedan",
+      "doors": 4,
+      "seats": 5,
+      "luggage": "2 Suitcases / 2 Bags",
+      "transmission": "Automatic",
+      "image": "/assets/passatcc.webp"
+    },
+    {
+      "id": "bmw_320",
+      "name": "BMW 320",
+      "price": 40.00,
+      "model": "Sedan",
+      "doors": 4,
+      "seats": 5,
+      "luggage": "3 Suitcases / 2 Bags",
+      "transmission": "Automatic",
+      "image": "/assets/BMW.png"
+    },
+    {
+      "id": "toyota_camry",
+      "name": "Toyota Camry",
+      "price": 35.00,
+      "model": "Sedan",
+      "doors": 4,
+      "seats": 5,
+      "luggage": "3 Suitcases / 2 Bags",
+      "transmission": "Automatic",
+      "image": "/assets/Toyota.png"
+    },
+    {
+      "id": "audi_a1",
+      "name": "Audi A1 S",
+      "price": 25.00,
+      "model": "Hatchback",
+      "doors": 4,
+      "seats": 5,
+      "luggage": "2 Suitcases / 2 Bags",
+      "transmission": "Manual",
+      "image": "/assets/audi.png"
+    }
+  ]
+}

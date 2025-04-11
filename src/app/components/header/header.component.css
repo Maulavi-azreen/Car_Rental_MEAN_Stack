@@ -1,11 +1,11 @@
-nav {
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  a, button {
-    color: #ffffff; /* White text */
-  }
-  
-  a:hover {
-    color: #f97316; /* Tailwind's orange-500 */
-  }
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  transition: box-shadow 0.3s;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

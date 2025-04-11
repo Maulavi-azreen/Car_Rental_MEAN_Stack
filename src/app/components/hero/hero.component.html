@@ -1,61 +1,32 @@
-<section class="min-h-[90vh] flex items-center pt-10">
-  <!-- Background Image -->
-  <div class="absolute inset-0 z-0">
-    <img src="assets/Hero_image.jpg" alt="Hero Image" class="w-full h-full object-cover object-right">
-  </div>
-  <!-- Overlay for darkening the background -->
-  <div class="absolute inset-0 bg-black opacity-60"></div>
-  <!-- Content wrapper -->
-  <div class="container mx-auto flex flex-col md:flex-row items-center relative z-10 pb-24 px-4">
-    <!-- Left: Text Content -->
-    <div class="w-full md:w-1/2 text-center md:text-left p-6">
-      <p class="text-orange-500 text-lg md:text-xl uppercase tracking-wider">
-        Plan Your Trip Now
-      </p>
-      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
-        Save big with our car rental
+<section class="relative flex items-center justify-center h-screen bg-no-repeat bg-cover bg-center text-black" style="background-image: url('assets/bg.png');">
+  <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between p-4 sm:p-8 space-y-6 sm:space-y-0 sm:space-x-8 relative z-10">
+    <!-- Text Section -->
+    <div class="flex flex-col space-y-4 sm:w-1/2 animate-text-in">
+      <!-- First paragraph: Plan your trip now -->
+      <p class="text-xl sm:text-2xl font-medium">Plan your trip now</p>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
+        <span>Save <span class="text-orange-600">big</span> with our</span><br />
+        <span class="font-extrabold">car rental.</span>
       </h1>
-      <p class="text-lg text-white mb-8">
-        To contribute to positive change and achieve our sustainability goals with many extraordinary
+      <!-- Second paragraph: To contribute to positive change -->
+      <p class="text-base sm:text-lg">
+        To contribute to positive change and achieve our sustainability goals with many extraordinary.
       </p>
-      <button class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 shadow-md flex items-center space-x-2 mx-auto md:mx-0 transition-transform transform hover:scale-105">
-        <span>Book Ride</span>
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-    </div>
-    <!-- Right: Countdown & Stats -->
-    <div class="w-full md:w-1/2 flex flex-col items-center">
-      <!-- Counting Stats -->
-      <div class="mt-6 grid grid-cols-2 gap-6 text-center text-white ">
-        <div *ngFor="let stat of stats">
-          <h2 class="text-3xl font-bold">{{ stat.value | number }}</h2>
-          <p>{{ stat.label }}</p>
-        </div>
-      </div>
-       <!-- Countdown Timer -->
-       <div class="bg-transparent text-white p-4 rounded-lg shadow-lg text-center w-64 mt-5">
-        <h2 class="text-lg font-semibold mb-2">Limited Offer! Book Now</h2>
-        <div class="text-3xl font-bold text-orange-500">{{ countdown }}</div>
+      <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+        <!-- Book Ride button with checkmark -->
+        <button class="bg-gradient-to-r from-orange-400 to-red-500 py-3 sm:py-3 px-6 sm:px-6 text-base sm:text-lg font-semibold rounded-md hover:bg-orange-600 text-white">
+          Book Ride <span class="ml-1 sm:ml-2">✓</span>
+        </button>
+        <!-- Learn More button with arrow -->
+        <button class="border-2 bg-black text-white py-3 sm:py-3 px-6 sm:px-6 text-base sm:text-lg font-semibold rounded-md hover:bg-white hover:text-orange-500">
+          Learn More <span class="ml-1 sm:ml-2">→</span>
+        </button>
       </div>
     </div>
+    
+    <!-- Image Section -->
+    <div class="hidden sm:block sm:w-1/2 animate-image-in">
+      <img src="assets/hero.png" alt="Car" class="w-full h-auto max-w-3xl sm:max-w-full sm:h-auto rounded-lg">
     </div>
-     <!-- Search Bar - Full Width at Bottom -->
-  <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 w-full max-w-5xl bg-white p-5 rounded-lg shadow-lg flex flex-wrap justify-center gap-4 items-center">
-    <input type="date" class="w-48 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500">
-    <input type="text" placeholder="Enter Pick-Up Location" class="w-48 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500">
-    <input type="text" placeholder="Enter Drop-Off Location" class="w-48 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500">
-    <select class="w-48 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500">
-      <option value="">Select Car Model</option>
-      <option value="audi">Audi</option>
-      <option value="bmw">BMW</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="toyota">Toyota</option>
-      <option value="honda">Honda</option>
-    </select>
-    <button class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 shadow-md transition-transform transform hover:scale-105">
-      Search
-    </button>
   </div>
-    </section>
+</section>

@@ -1,47 +1,56 @@
-<section class="py-16 bg-white">
-    <div class="container mx-auto text-center">
-      <!-- Section Title -->
-      <h2 class="text-4xl font-bold text-blue-900 mb-4 animate-fade-in">
-        Explore Our Cars
-      </h2>
-      <p class="text-lg text-gray-700 mb-12 animate-fade-in-delayed">
-        Find the perfect car for your journey.
-      </p>
-      <!-- Car Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-        <!-- Car 1 -->
-        <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Toyota Camry" class="w-full h-48 object-cover" />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-blue-900 mb-2">Toyota Camry</h3>
-            <p class="text-gray-700 mb-4">4 Seats, Automatic, $35/day</p>
-            <button class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">
-              Rent Now
-            </button>
-          </div>
+<section class="py-16 bg-gray-50 text-center" id="vehicle-models">
+  <div class="container mx-auto px-4">
+
+    <!-- Heading -->
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-black mb-8">
+      Vehicle Models
+    </h2>
+
+    <!-- Subheading -->
+    <p class="text-lg sm:text-xl text-gray-600 mb-8">
+      Our rental fleet. To contribute to positive change and achieve our sustainability goals with many extraordinary.
+    </p>
+
+    <!-- Tabs for car models -->
+    <div class="flex justify-center space-x-6 mb-8">
+      <button class="tab-button" [ngClass]="{'active-tab': selectedCar.id === 'mercedes_35'}" (click)="selectCar('mercedes_35')">Mercedes 35</button>
+      <button class="tab-button" [ngClass]="{'active-tab': selectedCar.id === 'suv'}" (click)="selectCar('suv')">SUV</button>
+      <button class="tab-button" [ngClass]="{'active-tab': selectedCar.id === 'vw_passatcc'}" (click)="selectCar('vw_passatcc')">VW PassatCC</button>
+      <button class="tab-button" [ngClass]="{'active-tab': selectedCar.id === 'bmw_320'}" (click)="selectCar('bmw_320')">BMW 320</button>
+      <button class="tab-button" [ngClass]="{'active-tab': selectedCar.id === 'toyota_camry'}" (click)="selectCar('toyota_camry')">Toyota Camry</button>
+      <button class="tab-button" [ngClass]="{'active-tab': selectedCar.id === 'audi_a1'}" (click)="selectCar('audi_a1')">Audi A1 S</button>
+    </div>
+
+    <!-- Car Details Section -->
+    <div class="flex flex-col sm:flex-row items-stretch">
+
+      <!-- Car Image (Left) -->
+      <div class="sm:w-1/2 mb-8 sm:mb-0 flex items-center justify-center">
+        <img [src]="selectedCar.image" alt="Car" class="w-full h-auto max-w-2xl sm:max-w-full sm:h-auto rounded-lg">
+      </div>
+
+      <!-- Car Information (Right) -->
+      <div class="sm:w-1/2 text-left p-4 bg-white rounded-lg flex flex-col justify-between">
+        <h3 class="text-3xl font-semibold text-black mb-4">{{ selectedCar.name }}</h3>
+        <p class="text-xl text-orange-600 mb-4">${{ selectedCar.price }} rent per day</p>
+
+        <div class="space-y-4">
+          <p><i class="fa fa-car mr-2 text-gray-600"></i><strong>Model:</strong> {{ selectedCar.model }}</p>
+          <p><i class="fa fa-door-closed mr-2 text-gray-600"></i><strong>Doors:</strong> {{ selectedCar.doors }}</p>
+          <p><i class="fa fa-users mr-2 text-gray-600"></i><strong>Seats:</strong> {{ selectedCar.seats }}</p>
+          <p><i class="fa fa-suitcase mr-2 text-gray-600"></i><strong>Luggage:</strong> {{ selectedCar.luggage }}</p>
+          <p><i class="fa fa-cogs mr-2 text-gray-600"></i><strong>Transmission:</strong> {{ selectedCar.transmission }}</p>
         </div>
-        <!-- Car 2 -->
-        <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-          <img src="https://images.unsplash.com/photo-1580273916550-ebdde4c9d429" alt="Honda CR-V" class="w-full h-48 object-cover" />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-blue-900 mb-2">Honda CR-V</h3>
-            <p class="text-gray-700 mb-4">5 Seats, Automatic, $45/day</p>
-            <button class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">
-              Rent Now
-            </button>
-          </div>
-        </div>
-        <!-- Car 3 -->
-        <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-          <img src="https://images.unsplash.com/photo-1616788494707-ec28f08d05a1" alt="BMW X5" class="w-full h-48 object-cover" />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-blue-900 mb-2">BMW X5</h3>
-            <p class="text-gray-700 mb-4">5 Seats, Automatic, $60/day</p>
-            <button class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">
-              Rent Now
-            </button>
-          </div>
+
+        <div class="flex items-center space-x-4 mt-8">
+          <button class="bg-gradient-to-r from-orange-400 to-red-500 py-3 px-6 text-white font-semibold rounded-md hover:bg-orange-600">
+            Book Now
+          </button>
+          <p class="text-black font-extrabold flex items-center">
+            <i class="fa fa-phone mr-2 text-black"></i>123-456-7890
+          </p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

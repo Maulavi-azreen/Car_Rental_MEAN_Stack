@@ -5,19 +5,42 @@ import { Component, HostListener } from '@angular/core';
   selector: 'app-header',
   imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  isMenuOpen = false;
-  isScrolled=false
+  isScrolled = false;
+  menuOpen = false;
+  isMobile = window.innerWidth < 768; // Using 768px as the md breakpoint
+
+  constructor() {
+    this.checkScreenSize(); // Initial check on component initialization
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkScreenSize();
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: any) {
+    this.isScrolled = window.pageYOffset > 50; // Add shadow when scrolled more than 50px
+    console.log('Scroll position:', window.pageYOffset, 'isScrolled:', this.isScrolled); // Debug log
+  }
 
   toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-  @HostListener('window:scroll', ['$event'])
-  onScroll() {
-    // Add background color when scrolled past 50px
-    this.isScrolled = window.scrollY > 50;
+    this.menuOpen = !this.menuOpen;
   }
 
+  private checkScreenSize() {
+    this.isMobile = window.innerWidth < 768;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('nav')) {
+      this.menuOpen = false; // Close menu when clicking outside
+    }
+  }
+ 
 }

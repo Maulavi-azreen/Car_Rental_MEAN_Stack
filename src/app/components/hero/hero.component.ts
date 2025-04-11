@@ -11,8 +11,6 @@ export class HeroComponent {
   stats = [
     { value: 500, label: 'Cars Available' },
     { value: 1000000, label: 'Happy Customers' },
-    { value: 150, label: 'Locations Covered' },
-    { value: 50, label: 'Company Tie-ups' }
   ];
 
   ngOnInit() {
