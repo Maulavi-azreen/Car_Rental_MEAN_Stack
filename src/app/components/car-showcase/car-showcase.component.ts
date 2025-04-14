@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-car-showcase',
+  standalone:true,
   imports: [CommonModule],
   templateUrl: './car-showcase.component.html',
   styleUrl: './car-showcase.component.css'

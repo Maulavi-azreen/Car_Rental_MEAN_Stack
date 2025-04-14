@@ -1,19 +1,34 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener ,OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnDestroy {
   isScrolled = false;
   menuOpen = false;
   isMobile = window.innerWidth < 768; // Using 768px as the md breakpoint
+  private fragmentSubscription: Subscription | undefined;
 
-  constructor() {
+  constructor(private route:ActivatedRoute) {
     this.checkScreenSize(); // Initial check on component initialization
+  }
+  ngOnInit() {
+    // Subscribe to fragment changes for scrolling to sections
+    this.fragmentSubscription = this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        const element = document.getElementById(fragment);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
   }
 
   @HostListener('window:resize', ['$event'])
@@ -40,6 +55,13 @@ export class HeaderComponent {
     const target = event.target as HTMLElement;
     if (!target.closest('nav')) {
       this.menuOpen = false; // Close menu when clicking outside
+    }
+  }
+
+  ngOnDestroy() {
+    // Clean up subscription
+    if (this.fragmentSubscription) {
+      this.fragmentSubscription.unsubscribe();
     }
   }
  
