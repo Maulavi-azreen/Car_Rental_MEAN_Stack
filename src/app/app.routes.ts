@@ -22,6 +22,12 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./components/admin/routes').then((m) => m.AdminRoutingModule),
   },
+     // User Section (Lazy loaded)
+     {
+      path: 'user',
+      loadChildren: () =>
+        import('./components/user/routes').then((m) => m.UserRoutingModule),
+    },
 
   // 404 fallback
   { path: '**', redirectTo: '', pathMatch: 'full' },
