@@ -1,0 +1,17 @@
+<div class="flex h-screen bg-gray-100">
+    <!-- Sidebar -->
+    <app-sidebar
+      [isOpen]="isSidebarOpen"
+      class="lg:block"
+      [ngClass]="{ 'hidden': !isSidebarOpen, 'block': isSidebarOpen }"
+    ></app-sidebar>
+  
+    <!-- Main Container -->
+    <div class="flex-1 flex flex-col">
+      <!-- Header -->
+      <app-header (toggleSidebar)="toggleSidebar()"></app-header>
+  
+      <!-- Main Content -->
+      <app-main-content></app-main-content>
+    </div>
+  </div>

@@ -1,0 +1,15 @@
+aside {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  @media (max-width: 1024px) {
+    aside {
+      transform: translateX(-100%);
+      position: fixed;
+      z-index: 50;
+    }
+  
+    aside.block {
+      transform: translateX(0);
+    }
+  }

@@ -1,0 +1,20 @@
+<aside class="bg-white text-black w-64 min-h-screen p-4">
+    <div class="flex items-center mb-6">
+      <img src="/assets/Logo.png" alt="Logo" class="h-8 mr-2" />
+      <h1 class="text-xl font-bold">Car Rental</h1>
+    </div>
+    <nav>
+      <ul>
+        <li *ngFor="let item of navItems" class="mb-2">
+          <a
+            [routerLink]="item.path"
+            class="flex items-center p-2 rounded hover:bg-orange-600 hover:text-white transition"
+            routerLinkActive="bg-blue-900"
+          >
+            <i class="fas fa-{{ item.icon }} mr-3"></i>
+            <span>{{ item.label }}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
